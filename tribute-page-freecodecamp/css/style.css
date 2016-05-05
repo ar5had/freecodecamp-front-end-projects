@@ -26,7 +26,7 @@ p{
 }
 
 body{
-  background: url("http://s32.postimg.org/j93l9kbwl/JO_D_130210_Aaron_Swartz.jpg") fixed no-repeat; 
+  background: url("http://s32.postimg.org/j93l9kbwl/JO_D_130210_Aaron_Swartz.jpg") fixed no-repeat;
   background-size: 100% 100vh;
   height:100vh;
 }
@@ -48,10 +48,15 @@ body{
   font-weight: 500;
 }
 
-#lastPara{
+footer{
   margin-bottom: 3rem;
 }
 
-#lastPara a{
+footer a{
   color: #999;
+}
+
+footer a:hover{
+  color: #ccc;
+  text-decoration: none;
 }
