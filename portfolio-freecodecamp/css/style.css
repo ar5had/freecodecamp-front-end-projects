@@ -22,7 +22,12 @@ p{
 }
 
 #wrapper{
-  padding: 40px 0 30px 0;  
+  padding: 40px 0 30px 0;
+  max-width: 540px;
+  margin: auto;
+}
+
+.cus-container{
   max-width: 540px;
   margin: auto;
 }
@@ -33,7 +38,7 @@ p{
 }
 
 section{
-  margin: 100px auto;
+  margin: 120px auto;
 }
 
 #logoName, button{
@@ -41,15 +46,38 @@ section{
 }
 /* global and mixed styling ends */
 
-nav{
+.nav{
   height: 60px;
-  background: #f0f0f0;
+  background: #fff;
   position: fixed;
   overflow: hidden;
   z-index: 10000;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-bottom: solid 1px #eee;
   max-width: 540px;
+  padding: 0;
+}
+
+.navItems{
+  width: 20px;
+  height: 20px;
+  border: solid 1px #eee;
+  border-radius: 50%;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav > .col-xs-1_25{
+  padding-top: 20px;
+}
+
+.col-xs-1_25{
+  float: left;
+  width: 12.5%;
+}
+
+img.navIcons{
+  vertical-align: super;
 }
 /* nav styling ends */
 
@@ -66,7 +94,7 @@ header{
 }
 
 .paraLinks{
-color: #5694f1;  
+color: #5694f1;
 }
 
 .paraLinks:hover{
@@ -79,7 +107,7 @@ input, textarea{
   background: none;
   border: 2px solid #aaa;
   font-weight: 500;
-  margin-bottom:12px; 
+  margin-bottom:12px;
 }
 
 input{
@@ -106,19 +134,19 @@ textarea, input{
 }
 
 :-moz-placeholder { /* Firefox 18- */
-  color: #aaa;  
+  color: #aaa;
   font-size: 16px;
   opacity: 1;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-  color: #aaa; 
+  color: #aaa;
   font-size: 16px;
   opacity: 1;
 }
 
-:-ms-input-placeholder {  
-  color: #aaa;  
+:-ms-input-placeholder {
+  color: #aaa;
   font-size: 16px;
   opacity: 1;
 }
@@ -143,7 +171,7 @@ button.btn.btn-default:hover{
   background-color: #F6C37A;
 }
 
-#contact-form .col-xs-9>p{
+.contact .col-xs-9>p{
   padding-bottom: 20px;
 }
 /* contact form section styling ends */
@@ -249,7 +277,7 @@ footer{
 }
 
 footer p:last-child{
-  margin-top: 20px;  
+  margin-top: 20px;
   color: #aaa;
 }
 /* footer styling ends */
@@ -266,9 +294,9 @@ footer p:last-child{
     width: 70px;
   }
   #logoIcon{
-    width: 80px;  
+    width: 80px;
   }
-    
+
   textarea, input{
     min-width: 209px;
   }
