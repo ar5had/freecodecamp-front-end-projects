@@ -3,5 +3,3 @@ Site Credits
 Elevator.js - https://github.com/tholman/elevator.js
 
 Icons - https://www.iconfinder.com/PixelBuddha
-
-Theme - inspired from cactus(https://github.com/koenbok/Cactus)
