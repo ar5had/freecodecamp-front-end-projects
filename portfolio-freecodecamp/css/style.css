@@ -38,7 +38,8 @@ p{
 }
 
 section{
-  margin: 120px auto;
+  padding-top: 100px;
+	margin: 50px auto;
 }
 
 #logoName, button{
@@ -78,7 +79,7 @@ section{
 
 img.navIcons{
   vertical-align: super;
-  width: 20px;
+	width:20px !important;
 }
 /* nav styling ends */
 
