@@ -57,7 +57,7 @@ section{
   padding: 0;
 }
 
-.navItems{
+img.navIcons:first-child{
   width: 20px;
   height: 20px;
   border: solid 1px #eee;
