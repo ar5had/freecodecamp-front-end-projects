@@ -57,7 +57,7 @@ section{
   padding: 0;
 }
 
-img.navIcons:first-child{
+.navItems{
   width: 20px;
   height: 20px;
   border: solid 1px #eee;
@@ -79,6 +79,10 @@ img.navIcons:first-child{
 img.navIcons{
   vertical-align: super;
 	width:20px !important;
+}
+
+img.navIcons:first-child{
+  border-radius: 50%;
 }
 /* nav styling ends */
 

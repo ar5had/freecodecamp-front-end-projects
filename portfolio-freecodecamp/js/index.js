@@ -292,7 +292,7 @@ window.onload = function() {
 	var elevator6 = new Elevator({
     element: document.querySelector('.elevator-button6'),
     targetElement: document.querySelector('#elevator-target6'),
-    mainAudio: '../jsmusic/elevator.mp3',
+    mainAudio: '../js/music/elevator.mp3',
     endAudio: '../js/music/ding.mp3'
   });
 
