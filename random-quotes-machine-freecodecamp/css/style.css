@@ -4,9 +4,7 @@ html{
 
 body{
   min-height: 100vh;
-  background: url("http://s19.postimg.org/7nde6p27n/download.jpg");
-  background-size: 100% 100%;
-  background-position:center;
+  background-size: 100% 100% !important;
   background-repeat: no-repeat;
 }
 

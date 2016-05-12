@@ -13,8 +13,20 @@ function getRandomJokes(){
     $("#quote").html(data["value"].joke);
 
     var tweetUrl ="https://twitter.com/intent/tweet?text=" + data["value"].joke;
-   //$("body").css("background-image","url('https://source.unsplash.com/random')");
     $("#tweetAnchor").attr("href",tweetUrl);
+    getFunnyImage();
+  });
+
+}
+
+function getFunnyImage(){
+
+  $.getJSON("http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=chuck+norris", function(data){
+
+    var url = "url('"
++ data.data["image_url"]+"') no-repeat";
+
+    $("body").css("background",url);
   });
 
 }
