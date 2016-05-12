@@ -1,53 +1,87 @@
+html{
+  font-size: 15px;
+}
+
 body{
-background: rgba(24, 24, 24,.3);
-background-image: url();
-background-repeat: no-repeat;
-background-size: 100vw 100vh;
+  min-height: 100vh;
+  background: url("http://s19.postimg.org/7nde6p27n/download.jpg");
+  background-size: 100% 100%;
+  background-position:center;
+  background-repeat: no-repeat;
+}
+
+.filter{
+  background: rgba(0, 0, 0, 0.55);
+  min-height: 100vh;
 }
 
 #mainBody{
   font-size: 20px;
-}
-
-#quote, #writer{
-  color: #fff;
-  font-weight: 300;
-  letter-spacing: -3px;
-  font-family: 'Quicksand', sans-serif;
-}
-
-#quote{
-  font-size: 2.5em;
-}
-
-#writer{
-  font-size: 1.5em;
-  font-style: italic;
-  letter-spacing: -1px;
+  max-width: 720px;
+  margin:auto;
+  padding: 50px;
 }
 
 #quotesBlock{
+  margin: auto;
+  min-height: 10rem;
+}
 
+#quote{
+
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
 }
 
 #next, #tweet{
-  letter-spacing:1px;
-  border: none;
-  border-radius: 0;
-  padding: 20px 25px;
-  margin: 2em auto;
-  color:#1c1c1c;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  letter-spacing:2px;
+  background: none;
+  border-radius: 2rem;
+  border: 2px solid #E5CA32;
+  padding: 1rem 2rem ;
+  margin: 2rem auto;
+  color: #E5CA32;
   text-transform: uppercase;
-  font-size: .5em;
-  -webkit-transition: background .4s ease-out;
-  -moz-transition: background .4s ease-out;
-  -o-transition: background .4s ease-out;
-  transition: background .4s ease-out;
+  font-size: .7rem;
+  -webkit-transition: color .4s ease-out;
+  -moz-transition: color .4s ease-out;
+  -o-transition: color .4s ease-out;
+  transition: color .4s ease-out;
+  -webkit-transition: border-color .4s ease-out;
+  -moz-transition: border-color .4s ease-out;
+  -o-transition: border-color .4s ease-out;
+  transition: border-color .4s ease-out;
 }
 
+#next:hover{
+  color: #FFD700;
+  border-color: #FFD700;
+}
+
+#tweet{
+  color: #31b7e0;
+  border-color: #31b7e0;
+}
+
+#tweet:hover{
+  color: #1dcaff;
+  border-color: #1dcaff;
+}
 /* media queries starts */
- @media screen and (max-width: 480px) {
-   #quotesBlock{
-     font-size: 15px;
+ @media screen and (max-width: 600px) {
+   html{
+     font-size: 14px;
+   }
+   #mainBody{
+     padding: 20px;
+   }
+   #quote{
+     line-height: 1.4;
    }
 }
