@@ -1,0 +1,40 @@
+body{
+  background-color: #eee;
+}
+
+.container{
+  width: 540px;
+  margin: auto;
+  padding: 50px;
+}
+
+#iconData{
+  padding: 10%;
+  height: 50%;
+  background: #fff;
+  border-radius: 50%;
+  text-align: center;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+#icon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+}
+
+#textData{
+  text-align: center;
+}
+
+#textData h3{
+  margin: 50px auto;
+  color: #444;
+  font-size: 30px;
+  font-family: sans-serif;
+}
