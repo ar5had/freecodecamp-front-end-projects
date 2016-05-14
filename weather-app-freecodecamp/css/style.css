@@ -1,0 +1,31 @@
+body{
+  background-color:#eee;;
+}
+
+.container{
+  top: 20%;
+  background: rgba(255,255,255,1);
+  width: 300px;
+  margin: auto;
+  height: 500px;
+  margin: 10px auto;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px 10px rgba(0,0,0,.1);
+}
+
+#iconArea{
+  height: 200px;
+}
+
+#textData .col-xs-12{
+  border: 1px #fff solid;
+}
+
+h3{
+  color: #444;
+  font-size: 20px;
+}
+
+.off{
+  color: rgba(0,0,0,.5);
+}
