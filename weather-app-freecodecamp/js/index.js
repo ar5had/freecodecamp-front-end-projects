@@ -9,6 +9,7 @@ $(document).ready(function(){
 
         $("#temp").html(JSON.stringify(data));
         var temp = round(data.main.temp-273);
+        containerColor(temp);
         var stat = data.weather[0].main;
         var loc = data.name+", "+data.sys.country;
         var icon = "wi-owm-"+data.weather[0].id;
@@ -62,3 +63,12 @@ function toCel(temp){
         return this;
     };
 }(jQuery));
+
+function containerColor(temp){
+  if(temp > 40)
+    $(".container").css("background","#eab28e");
+  else if(temp > 30)
+    $(".container").css("background","rgb(234, 237, 130)");
+  else
+    $(".container").css("background","#a3d0e7")
+}
