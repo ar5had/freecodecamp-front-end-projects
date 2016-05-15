@@ -26,9 +26,6 @@ $(document).ready(function(){
     }); // ends function(position)
   }// ends if
 
-  else{
-    alert("Allow your browser to fetch location");
-  }
 
     $(".convert").clickToggle( function(){
       $("#cel").html("°F");
