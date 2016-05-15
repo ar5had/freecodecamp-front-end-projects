@@ -14,29 +14,25 @@ $(document).ready(function(){
         $("#weatherStatus").html(stat);
         $("#location").html(loc);
         $("#temp").html(temp);
-      });
+      });// ends getjson
 
-    }); 
-  }
-  
-  $("#convert").toggle(function(){
-    $(".cel").addClass("off");
-    $(".cel").removeClass("convert");
-    $(".fah").addClass("convert");
-    $(".fah").removeClass("off");
-    var elem = document.getElementById("#convert");
-    elem.value = toFah(elem.value);
-    },function(){
-    $(".fah").addClass("off");
-    $(".fah").removeClass("convert");
-    $(".cel").removeClass("off");
-    $(".cel").addClass("convert");
-    var elem = document.getElementById("#convert");
-    elem.value = toCel(elem.value);
-    
- });
 
-});
+
+    }); // ends function(position)
+  }// ends if
+
+    $(".convert").clickToggle( function(){
+      $("#cel").html("°F");
+      $("#fah").html("°C");
+      $("#temp").html( toFah($("#temp").html()) );
+      }
+      , function(){
+      $("#cel").html("°C");
+      $("#fah").html("°F");
+      $("#temp").html( toCel($("#temp").html()) );
+    });
+
+});//ends document ready function
 
 function round(no, precision){
   var multp = Math.pow(10, precision || 1);
@@ -44,9 +40,23 @@ function round(no, precision){
 }
 
 function toFah(temp){
-  return (12*temp/5 +32);
+  return round(9/5*temp + 32);
 }
 
 function toCel(temp){
-  return (5*temp/12 -32);
+  return round(5/9*(temp-32));
 }
+
+(function($) {
+    $.fn.clickToggle = function(func1, func2) {
+        var funcs = [func1, func2];
+        this.data('toggleclicked', 0);
+        this.click(function() {
+            var data = $(this).data();
+            var tc = data.toggleclicked;
+            $.proxy(funcs[tc], this)();
+            data.toggleclicked = (tc + 1) % 2;
+        });
+        return this;
+    };
+}(jQuery));

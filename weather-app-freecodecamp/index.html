@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <title>Weather App</title>
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <div class="container">
       <div class="row" id="iconArea">
-          <div class="col-xs-12 text-center">
+        <div class="col-xs-12 text-center">
+         <h3>Weather App</h3>
+        </div>
+        <div class="col-xs-12 text-center">
             <h3>
               <span id="temp"></span>
-              <span id="cel convert ">°C</span>
+              <span id="cel">°C</span>
               <span>|</span>
-              <span id="fah" class="off">°F</span>
+              <span id="fah" class="off convert">°F</span>
             </h3>
           </div>
       </div>
@@ -24,7 +28,7 @@
           <h3>Status</h3>
           </div>
           <div class="col-xs-6">
-          <h3 id="weatherStatus">Status</h3>
+          <h3 id="weatherStatus"></h3>
           </div>
         </div>
         <div class="col-xs-12">
@@ -32,7 +36,7 @@
           <h3>Location</h3>
           </div>
           <div class="col-xs-6">
-          <h3 id="location">Location</h3>
+          <h3 id="location"></h3>
           </div>
         </div>
       </div>
