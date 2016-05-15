@@ -17,6 +17,8 @@ $(document).ready(function(){
         $("#weatherStatus").html(stat);
         $("#location").html(loc);
         $("#temp").html(temp);
+        $(".container").removeClass("hidden");
+        $(".container").addClass("show");
       });// ends getjson
 
 
@@ -33,6 +35,7 @@ $(document).ready(function(){
       $("#cel").html("°C");
       $("#fah").html("°F");
       $("#temp").html( toCel($("#temp").html()) );
+
     });
 
 });//ends document ready function
