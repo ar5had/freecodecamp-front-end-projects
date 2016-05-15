@@ -11,6 +11,8 @@ $(document).ready(function(){
         var temp = round(data.main.temp-273);
         var stat = data.weather[0].main;
         var loc = data.name+", "+data.sys.country;
+        var icon = "wi-owm-"+data.weather[0].id;
+        $("#icon").addClass(icon);
         $("#weatherStatus").html(stat);
         $("#location").html(loc);
         $("#temp").html(temp);
