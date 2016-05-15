@@ -3,6 +3,7 @@ $(document).ready(function(){
   var key = "42c038e003b8481d9901c135065a08ce";
   if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(function(position){
+
       var lat = Math.floor(position.coords.latitude);
       var long = Math.floor(position.coords.longitude);
    $("#container").css("display","block"); $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&APPID="+key,function(data){
@@ -17,14 +18,17 @@ $(document).ready(function(){
         $("#weatherStatus").html(stat);
         $("#location").html(loc);
         $("#temp").html(temp);
-        $(".container").removeClass("hidden");
-        $(".container").addClass("show");
+
       });// ends getjson
 
 
 
     }); // ends function(position)
   }// ends if
+
+  else{
+    alert("Allow your browser to fetch location");
+  }
 
     $(".convert").clickToggle( function(){
       $("#cel").html("°F");
@@ -35,7 +39,6 @@ $(document).ready(function(){
       $("#cel").html("°C");
       $("#fah").html("°F");
       $("#temp").html( toCel($("#temp").html()) );
-
     });
 
 });//ends document ready function

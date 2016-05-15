@@ -1,5 +1,9 @@
-body{
+.warning-sign{
+  font-size:100px;
+  color: yellow;
+}
 
+body{
   background: #eee;
   background-size: 100% 100%;
   font-family: 'Montserrat', sans-serif;
@@ -9,14 +13,14 @@ body{
 }
 
 .container{
+  background: pink;
   max-width: 300px;
-  margin: 5% auto;
-
+  margin: 3% auto;
   box-shadow: 0px 0px 15px 15px rgba(46, 61, 73, 0.12);
-  -webkit-transition: display 500ms ease-out 1s;
-  -moz-transition: display 500ms ease-out 1s;
-  -o-transition: display 500ms ease-out 1s;
-  transition: display 500ms ease-out 1s;
+  -webkit-transition: background .5s ease-out 1s;
+  -moz-transition: background .5s ease-out 1s;
+  -o-transition: background .5s ease-out 1s;
+  transition: background .5s ease-out 1s;
 }
 
 i{
