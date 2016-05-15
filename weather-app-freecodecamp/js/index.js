@@ -5,7 +5,7 @@ $(document).ready(function(){
     navigator.geolocation.getCurrentPosition(function(position){
       var lat = Math.floor(position.coords.latitude);
       var long = Math.floor(position.coords.longitude);
-    $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&APPID="+key,function(data){
+   $("#container").css("display","block"); $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&APPID="+key,function(data){
 
         $("#temp").html(JSON.stringify(data));
         var temp = round(data.main.temp-273);
