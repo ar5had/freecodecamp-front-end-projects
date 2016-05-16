@@ -8,11 +8,11 @@ body{
 }
 
 header.container-fluid{
-  padding: 50px 0 0 0;
   margin: 0;
   background-color: #39404A;
-  padding-bottom: 10vh;
   box-shadow: 0 0px 3px 3px rgba(0,0,0,.4);
+  height: 100vh;
+  position: relative;
 }
 
 .container{
@@ -51,6 +51,13 @@ input{
   line-height: 25px;
 }
 
+#searchBox{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
 
 button{
   background: none;
@@ -74,6 +81,11 @@ form.col-xs-12{
 
 .glyphicon-search{
   cursor: pointer;
+
+}
+
+.glyphicon-search:hover{
+
 }
 
 .bar{
@@ -82,6 +94,7 @@ form.col-xs-12{
   font-size: 22px;
   font-family: 'Montserrat', sans-serif;
 }
+
 
 li:hover{
   box-shadow: 0 0 15px 15px rgba(0,0,0,.1);
@@ -107,10 +120,12 @@ li:hover{
   opacity: 1;
 }
 
+
 /*********media query starts ***********/
 
 @media screen and (max-width: 420px){
   #searchBar,.glyphicon{
     font-size: 16px;
   }
+
 }

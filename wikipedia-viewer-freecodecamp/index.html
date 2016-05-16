@@ -10,7 +10,7 @@
   </head>
   <body>
     <header class="container-fluid">
-      <div class="container text-center">
+      <div class="container text-center" id="searchBox">
         <form class="col-xs-12">
             <input class="col-xs-9" id="searchBar" type="text" placeholder="search"/>
             <span class="glyphicon glyphicon-search col-xs-1" data-toggle="tooltip" title="Search"></span>
@@ -20,9 +20,11 @@
         </form>
       </div>
     </header>
-    <div id="mainBody" class="container text-center">
+    <div id="mainBody" class="container text-center hidden">
       <ul id="results">
       </ul>
     </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
   </body>
 </html>
