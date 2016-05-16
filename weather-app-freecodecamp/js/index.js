@@ -1,13 +1,10 @@
 $(document).ready(function(){
-
-  var key = "42c038e003b8481d9901c135065a08ce";
+  var key = "0026315b38907d284485dbe2c881d699";
   if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(function(position){
-
       var lat = Math.floor(position.coords.latitude);
       var long = Math.floor(position.coords.longitude);
-   $("#container").css("display","block"); $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&APPID="+key,function(data){
-
+      $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+"&APPID="+key,function(data){
         $("#temp").html(JSON.stringify(data));
         var temp = round(data.main.temp-273);
         containerColor(temp);
@@ -18,26 +15,20 @@ $(document).ready(function(){
         $("#weatherStatus").html(stat);
         $("#location").html(loc);
         $("#temp").html(temp);
-
       });// ends getjson
-
-
-
     }); // ends function(position)
   }// ends if
 
-
-    $(".convert").clickToggle( function(){
-      $("#cel").html("°F");
-      $("#fah").html("°C");
-      $("#temp").html( toFah($("#temp").html()) );
-      }
-      , function(){
-      $("#cel").html("°C");
-      $("#fah").html("°F");
-      $("#temp").html( toCel($("#temp").html()) );
-    });
-
+  $(".convert").clickToggle( function(){
+    $("#cel").html("°F");
+    $("#fah").html("°C");
+    $("#temp").html( toFah($("#temp").html()) );
+    }
+    , function(){
+    $("#cel").html("°C");
+    $("#fah").html("°F");
+    $("#temp").html( toCel($("#temp").html()) );
+  });
 });//ends document ready function
 
 function round(no, precision){
@@ -54,17 +45,17 @@ function toCel(temp){
 }
 
 (function($) {
-    $.fn.clickToggle = function(func1, func2) {
-        var funcs = [func1, func2];
-        this.data('toggleclicked', 0);
-        this.click(function() {
-            var data = $(this).data();
-            var tc = data.toggleclicked;
-            $.proxy(funcs[tc], this)();
-            data.toggleclicked = (tc + 1) % 2;
-        });
-        return this;
-    };
+  $.fn.clickToggle = function(func1, func2) {
+    var funcs = [func1, func2];
+    this.data('toggleclicked', 0);
+    this.click(function() {
+      var data = $(this).data();
+      var tc = data.toggleclicked;
+      $.proxy(funcs[tc], this)();
+      data.toggleclicked = (tc + 1) % 2;
+    });
+      return this;
+  };
 }(jQuery));
 
 function containerColor(temp){
