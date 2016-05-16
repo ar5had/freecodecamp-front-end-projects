@@ -5,7 +5,7 @@ $(document).ready(function(){
   var searchButton = $(".glyphicon-search");
   var searchUrl = "https://en.wikipedia.org/w/api.php";
   var displayResults = function(){
-  $.ajax({
+    $.ajax({
       url: searchUrl,
       dataType: 'jsonp',
       data: {
@@ -29,15 +29,15 @@ $(document).ready(function(){
         $.map(results, function(result){
           var elem = $('<li>');
           elem.append($('<h3>').text(result.title));
-          if(result.thumbnail) elem.append($('<img>').attr('width',150).attr('src',result.thumbnail.source));
-          elem.append($('<p>').text(result.extracts));
+          //if(result.thumbnail) elem.append($('<img>').attr('width',150).attr('src',result.thumbnail.source));
+          elem.append($('<p>').text(result.extract));
           resultArea.append(elem);
         });
       }
-    });
+    });   
   };
-  /*
-  searchBar.autocomplete({s
+ /* 
+  searchBar.autocomplete({
         source: function (request, response) {
             $.ajax({
                 url: searchUrl,
@@ -52,10 +52,12 @@ $(document).ready(function(){
                 }
             });
         }
-    });*/
+    });
+  */
   searchButton.click(function(){
     keyword = searchBar.val();
+    resultArea.empty();
     $(".container-fluid").animate({height:"30vh"}, 600);
-    displayResults();
+    displayResults();    
   });
 });

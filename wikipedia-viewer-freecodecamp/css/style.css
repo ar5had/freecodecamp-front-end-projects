@@ -7,6 +7,11 @@ body{
   padding:0;
 }
 
+h1{
+  font-family: 'Arvo', sans-serif;
+  color:#E35865;
+}
+
 header.container-fluid{
   margin: 0;
   background-color: #39404A;
@@ -16,7 +21,7 @@ header.container-fluid{
 }
 
 .container{
-  max-width: 600px;
+  max-width: 720px;
   margin: auto;
   padding: 0 30px;
 }
@@ -26,15 +31,28 @@ ul{
 }
 
 li{
-  padding: 0;
+  letter-spacing: 0;
+  padding: 30px;
   list-style: none;
-  height: 200px;
+  min-height: 200px;
   background: #fff;
   margin: 50px auto;
+  text-align: left;
   -webkit-transition: box-shadow .2s ease-out .2s;
   -moz-transition: box-shadow .2s ease-out .2s;
   -o-transition: box-shadow .2s ease-out .2s;
   transition: box-shadow .2s ease-out .2s;
+  word-spacing: 2px;
+}
+
+li > h3{
+  margin-top:0;
+  color: #E35865;
+}
+
+li > p{
+  color: #666;
+  line-height: 2;
 }
 
 input{
@@ -67,6 +85,7 @@ button{
 form{
   padding: 10px 0;
   border: 3px solid #E35865;
+  
 }
 
 form.col-xs-12{
@@ -115,17 +134,23 @@ li:hover{
   opacity: 1;
 }
 
-:-ms-input-placeholder {
+:-ms-input-placeholder {  
   color: #bbb;
   opacity: 1;
 }
 
+#mainBody{
+  font-family: 'Montserrat', sans-serif;
+}
 
 /*********media query starts ***********/
 
 @media screen and (max-width: 420px){
   #searchBar,.glyphicon{
     font-size: 16px;
-  }
-
+  } 
+  
+  h1{
+    font-size: 28px;
+  } 
 }
