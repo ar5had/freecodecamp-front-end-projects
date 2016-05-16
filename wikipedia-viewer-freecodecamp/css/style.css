@@ -4,6 +4,10 @@ body{
   min-height: 101vh;
 }
 
+a:hover{
+  text-decoration: none;
+}
+
 .col-xs-1{
   padding:0;
 }
@@ -84,7 +88,7 @@ button{
   padding: 10px 0;
   padding-right: 15px;
   border: 3px solid #E35865;
-  
+
 }
 
 .form.col-xs-12{
@@ -133,7 +137,7 @@ li:hover{
   opacity: 1;
 }
 
-:-ms-input-placeholder {  
+:-ms-input-placeholder {
   color: #bbb;
   opacity: 1;
 }
@@ -147,9 +151,9 @@ li:hover{
 @media screen and (max-width: 420px){
   #searchBar,.glyphicon{
     font-size: 16px;
-  } 
-  
+  }
+
   h1{
     font-size: 28px;
-  } 
+  }
 }

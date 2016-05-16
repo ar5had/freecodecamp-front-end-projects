@@ -27,11 +27,13 @@ $(document).ready(function(){
       success: function(json){
         var results = json.query.pages;
         $.map(results, function(result){
-          var elem = $('<li>');
-          elem.append($('<h3>').text(result.title));
+          var elem1 = $('<a href='+link+'target="_blank">');
+          var elem2 = $('<li>');
+          elem2.append($('<h3>').text(result.title));
           //if(result.thumbnail) elem.append($('<img>').attr('width',150).attr('src',result.thumbnail.source));
-          elem.append($('<p>').text(result.extract));
-          resultArea.append(elem);
+          elem2.append($('<p>').text(result.extract));
+          elem1.append(elem2);
+          resultArea.append(elem1);
         });
       }
     });
