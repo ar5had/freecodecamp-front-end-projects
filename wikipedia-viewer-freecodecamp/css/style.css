@@ -1,6 +1,7 @@
 body{
   background: #eee;
   letter-spacing: 2px;
+  min-height: 101vh;
 }
 
 .col-xs-1{
@@ -17,13 +18,13 @@ header.container-fluid{
   background-color: #39404A;
   box-shadow: 0 0px 3px 3px rgba(0,0,0,.4);
   height: 100vh;
-  position: relative;
+  min-height: 150px;
 }
 
 .container{
   max-width: 720px;
   margin: auto;
-  padding: 0 30px;
+  padding: 0 50px;
 }
 
 ul{
@@ -48,6 +49,7 @@ li{
 li > h3{
   margin-top:0;
   color: #E35865;
+  line-height: 2;
 }
 
 li > p{
@@ -61,7 +63,7 @@ input{
   border: none;
   font-size: 20px;
   color: #bbb;
-  background:#39404A;
+  background:none;
   letter-spacing: 1px;
   word-spacing: 10px;
   font-family: 'Arvo', sans-serif;
@@ -70,11 +72,7 @@ input{
 }
 
 #searchBox{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
+  padding-top: 40vh;
 }
 
 button{
@@ -82,13 +80,14 @@ button{
   border: none;
 }
 
-form{
+.form{
   padding: 10px 0;
+  padding-right: 15px;
   border: 3px solid #E35865;
   
 }
 
-form.col-xs-12{
+.form.col-xs-12{
   padding-left: 0;
 }
 
