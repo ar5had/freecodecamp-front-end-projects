@@ -37,6 +37,7 @@ i{
 h3{
   color: #fff;
   font-size: 15px;
+
   margin: 0;
   line-height: 3;
 }
@@ -74,6 +75,7 @@ h3{
 
 #textData .col-xs-6{
   padding: 0;
+
 }
 
 #textData h3{
@@ -86,9 +88,7 @@ h3{
 
 #textData .col-xs-12:last-child .col-xs-6{
   border-top: #eee 1px solid;
-
-/**** weather icon min css was added here so that this file can work on codepen too ***/
-
+}
 
 /*************weather icon min css ***********/
 /*!
