@@ -38,9 +38,9 @@ $(document).ready(function(){
         });
         $("footer").append("<p>----x--------x----</p>");
       }
-    });   
+    });
   };
- /* 
+ /*
   searchBar.autocomplete({
         source: function (request, response) {
             $.ajax({
@@ -61,7 +61,8 @@ $(document).ready(function(){
   searchButton.click(function(){
     keyword = searchBar.val();
     resultArea.empty();
-    displayResults(); 
+    displayResults();
+    $("footer").empty();
     $("#searchBox").animate({'padding-top':"0"}, 600);
     $(".container-fluid").animate({height:"30vh"}, 600);
   });
