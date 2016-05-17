@@ -1,0 +1,56 @@
+body{
+  background: #eee;
+}
+
+.head{
+   background-color: #382F48;
+}
+
+.container{
+  max-width: 800px;
+  margin: auto;
+  padding: 50px;
+}
+
+.twitchLogo{
+  height: 55px;
+  width: 55px;
+}
+
+h2{
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 50px;
+  letter-spacing: -3px;
+}
+
+.col-xs-4.selecter{
+  text-align: center;
+}
+
+.streamer{
+  width:30px;
+  height:30px;
+  border: 5px solid #6542A6;
+  margin: auto;
+}
+
+ul{
+  padding:0;
+}
+
+li{
+  
+  list-style: none;
+  background: #fff;
+  margin-top:10px;
+  padding:20px; 
+}
+
+li>h3>img{
+  width: 50px;
+  height: 50px;
+  border: solid 3px #382F48;
+  border-radius: 50%;
+}
