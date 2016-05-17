@@ -4,8 +4,12 @@ body{
   min-height: 101vh;
 }
 
-a:hover{
+a:hover, a:active{
   text-decoration: none;
+}
+
+input[type="text"], input[type="password"], textarea, select {
+    outline: none;
 }
 
 .col-xs-1{
