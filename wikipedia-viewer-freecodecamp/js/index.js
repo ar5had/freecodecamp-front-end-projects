@@ -27,6 +27,7 @@ $(document).ready(function(){
       success: function(json){
         var results = json.query.pages;
         $.map(results, function(result){
+          var link = "http://en.wikipedia.org/?curid"+result.pageid;
           var elem1 = $('<a href='+link+'target="_blank">');
           var elem2 = $('<li>');
           elem2.append($('<h3>').text(result.title));
@@ -35,10 +36,11 @@ $(document).ready(function(){
           elem1.append(elem2);
           resultArea.append(elem1);
         });
+        $("footer").append("<p>----x--------x----</p>");
       }
-    });
+    });   
   };
- /*
+ /* 
   searchBar.autocomplete({
         source: function (request, response) {
             $.ajax({
@@ -59,8 +61,8 @@ $(document).ready(function(){
   searchButton.click(function(){
     keyword = searchBar.val();
     resultArea.empty();
+    displayResults(); 
     $("#searchBox").animate({'padding-top':"0"}, 600);
     $(".container-fluid").animate({height:"30vh"}, 600);
-    displayResults();
   });
 });
