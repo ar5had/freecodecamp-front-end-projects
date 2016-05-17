@@ -68,4 +68,8 @@ $(document).ready(function(){
     $("#searchBox").animate({'padding-top':"0"}, 600);
     $(".container-fluid").animate({height:"30vh"}, 600);
   });
+  searchBar.keypress(function(e){
+      if(e.keyCode==13)
+      $(searchButton).click();
+  });
 });
