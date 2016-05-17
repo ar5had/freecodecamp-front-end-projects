@@ -27,8 +27,10 @@ $(document).ready(function(){
       success: function(json){
         var results = json.query.pages;
         $.map(results, function(result){
-          var link = "http://en.wikipedia.org/?curid"+result.pageid;
-          var elem1 = $('<a href='+link+'target="_blank">');
+          var link = "http://en.wikipedia.org/?curid="+result.pageid;
+          var elem1 = $('<a>');
+          elem1.attr("href",link);
+          elem1.attr("target","_blank");
           var elem2 = $('<li>');
           elem2.append($('<h3>').text(result.title));
           //if(result.thumbnail) elem.append($('<img>').attr('width',150).attr('src',result.thumbnail.source));
