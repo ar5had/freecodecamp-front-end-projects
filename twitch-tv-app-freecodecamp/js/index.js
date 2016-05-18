@@ -59,7 +59,14 @@ $(document).ready(function(){
           elem.append(nameWithLink.append(nameLink));
           elem.append($('<div>').attr("class","col-xs-10 col-md-5").append($('<p>').text(status)));
           superElem.append(elem);
-          results.append($('<li>').append(superElem));
+          if(status.substring(0,9)==="Streaming")
+            results.append($('<li>').css("border-left","9px solid rgb(75, 167, 75)").append(superElem));
+          else if(status==="Offline")
+            results.append($('<li>').css("border-left","9px solid #aaa").append(superElem));
+          else
+            results.append($('<li>').css("border-left","9px solid #c96554").append(superElem));
+  }//displayResults ends
+
   }//displayResults ends
 
   function getResults(){
