@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var results = $('#resultArea');
-  var users = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff","brunofin", "comster404","esl_sc2","ogamingsc2","channelThatdoesnotExist"];
+  var users = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","!@#*","brunofin", "comster404","esl_sc2","ogamingsc2","pewdiepie"];
 
   function storeResults(name, index){
       var status = "";
@@ -59,14 +59,14 @@ $(document).ready(function(){
           elem.append(nameWithLink.append(nameLink));
           elem.append($('<div>').attr("class","col-xs-10 col-md-5").append($('<p>').text(status)));
           superElem.append(elem);
-          if(status.substring(0,9)==="Streaming")
-            results.append($('<li>').css("border-left","9px solid rgb(75, 167, 75)").append(superElem));
-          else if(status==="Offline")
-            results.append($('<li>').css("border-left","9px solid #aaa").append(superElem));
-          else
-            results.append($('<li>').css("border-left","9px solid #c96554").append(superElem));
-  }//displayResults ends
 
+      if(status.substring(0,9)==="Streaming")
+              results.append($('<li>').css("border-left","9px solid rgb(75, 167, 75)").append(superElem));
+
+    else if(status==="Offline")
+      results.append($('<li>').css("border-left","9px solid #aaa").append(superElem));
+    else
+      results.append($('<li>').css("border-left","9px solid #c96554").append(superElem));
   }//displayResults ends
 
   function getResults(){
