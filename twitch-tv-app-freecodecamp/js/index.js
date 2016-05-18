@@ -1,58 +1,66 @@
 $(document).ready(function(){
   var results = $('#resultArea');
-  var users = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff","brunofin","comster404"];
-  var getInfo = function(name){
-    var url = "https://api.twitch.tv/kraken/streams/"+name;
-    var status = "";
-    var link = "";
-    var channelLink = "";
-    var img = "";
-    var channelName = name;
+  var users = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff","brunofin", "comster404","esl_sc2","ogamingsc2"];
+  var url = "";
+  var status = "";
+  var link = "";
+  var channelLink = "";
+  var img = "";
+  var channelName = "";
+  
+  var displayResults = function(name){
+    url = "https://api.twitch.tv/kraken/streams/"+name;
+    status = "";
+    link = "";
+    channelLink = "";
+    img = "";
+    channelName = name;
+    //alert(url)
     $.getJSON(url,function(json){
-      //var jsn= JSON.stringify(json);
-      //alert(jsn);
+      //alert(url);
       if(!json.status){
-        //alert(json.stream);
         if(json.stream)
-          status = json.stream.game;  
+          status = "Streaming: "+json.stream.game;  
         else
           status = "Offline";
-        //alert(status);
         link = json._links.channel;
-        //alert(link);
-        
+        //alert(link)
         $.getJSON(link,function(channelJson){
-          //var jsn= JSON.stringify(channelJson);
-          //alert(jsn);
-          name = channelJson.display_name;
-          //alert(name);
+          channelName = channelJson.display_name;
           img = channelJson.logo;
-          //alert(img);
           channelLink = channelJson.url;
-          //alert(channelLink);
+          //display part starts here
+          var superElem = $("<div>").attr("class","row");
+          var elem = $("<div>");
+          
+          elem.attr("class","col-xs-12 col-md-12")
+         if(img) elem.append($('<div>').attr("class","col-xs-2 col-md-2").append($('<img>').attr({src:img})));       
+          else
+            elem.append($('<div>').attr("class","col-xs-2 col-md-2").append($('<img>').attr({src:"http://s19.postimg.org/qygpcxncj/unknown.png"})));
+          var nameWithLink =$('<div>').attr("class","col-xs-10 col-md-5").append();
+          var nameLink = $('<a>').attr({href:channelLink,target:"_blank"});
+          nameLink.append($('<p>').text(channelName));
+          elem.append(nameWithLink.append(nameLink));
+          elem.append($('<div>').attr("class","col-xs-10 col-md-5").append($('<p>').text(status)));
+          superElem.append(elem);
+          results.append($('<li>').append(superElem));
         });
+      
       }
       else if(json.status===402){
         status = "Account closed";
       }
       else{
         status = "No account found";
-      }  
+      }
     });//main get Req ends
   };//getInfo ends
   
-  function displayResult(){
+  function getResults(){
     for(var index in users){
-      getInfo(users[index]);
-      var elem = $("<li>");
-      elem.append($('<img>')).attr("src",img);
-      var nameWithLink = $('<a>');
-      nameWithLink.attr("href",channelLink);
-      nameWithLink.append($('<p>').text(name));
-      elem.append(nameWithLink);
-      elem.append($('<p>').text(status));
-    }   
- }//ends Display Result
-  
-  displayResult();
+      displayResults(users[index]);
+    }
+    return true;
+  }//ends Display Result
+ if(getResults()) $("footer").delay(5000).append($('<h2>').append($('<img>').attr({src:"http://s19.postimg.org/5g4p3n90z/claping_hands.png",class:"flogo"})).text("th-th-th-that's all folks!"));
 });
