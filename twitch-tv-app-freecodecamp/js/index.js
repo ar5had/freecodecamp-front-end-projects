@@ -1,83 +1,75 @@
 $(document).ready(function(){
   var results = $('#resultArea');
   var users = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff","brunofin", "comster404","esl_sc2","ogamingsc2","channelThatdoesnotExist"];
-  var status = [];
-  var link = [];
-  var channelLink = [];
-  var img = [];
-  var channelName = [];
-  var storeResults = function(name){
-    var url = "https://api.twitch.tv/kraken/streams/"+name;
-    //alert(url)
+
+  function storeResults(name, index){
+      var status = "";
+      var link = "";
+      var channelLink = "";
+      var img = "";
+      var channelName = "";
+      var url = "https://api.twitch.tv/kraken/streams/"+name;
     $.ajax({url,success:function(json){
 
           if(json.stream)
-           status.push("Streaming: "+json.stream.game);
-
+           status = "Streaming: "+json.stream.game;
           else
-            status.push("Offline");
+            status = "Offline";
 
-          link.push(json._links.channel);
-          //alert(link)
-          $.getJSON(link[link.length-1],function(channelJson){
-            //alert(JSON.stringify(channelJson))
-            channelName.push(channelJson.display_name);
-            img.push(channelJson.logo);
-            channelLink.push(channelJson.url);
-
+          link = json._links.channel;
+          $.getJSON(link,function(channelJson){
+            channelName = channelJson.display_name;
+            img = channelJson.logo;
+            if(!img) img = "http://s19.postimg.org/qygpcxncj/unknown.png";
+            channelLink = channelJson.url;
+            displayResults(img,channelName,channelLink,status);
           });
-
           },
           statusCode: {
           404: function() {
-            status.push("Account doesn't exist");
-            channelLink.push("undefined");
-            channelName.push(name);
-            img.push("http://s19.postimg.org/qygpcxncj/unknown.png");
+            status = "Account doesn't exist";
+            channelLink = "undefined";
+            channelName = name;
+            img = "http://s19.postimg.org/qygpcxncj/unknown.png";
+            displayResults(img,channelName,channelLink,status);
           },
           422: function() {
-            status.push("Account closed");
-            channelLink.push("undefined");
-            channelName.push(name);
-            img.push("http://s19.postimg.org/qygpcxncj/unknown.png");
+            status = "Account closed";
+            channelLink = "undefined";
+            channelName = name;
+            img = "http://s19.postimg.org/qygpcxncj/unknown.png";
+            displayResults(img,channelName,channelLink,status);
           }
 
     }});//main get Req ends
-    return "successfully returned from getInfo"
+    return "successfully returned from storeResults"
   };//storeResults ends
-  console.log(channelName.length, channelName);
+
   //display part starts here
-  function displayResults(){
-          //console.log(channelName,status,channelLink,img);
+  function displayResults(img,channelName,channelLink,status){
+         var superElem = $("<div>").attr("class","row");
+         var elem = $("<div>");
 
-  for(var user = 0; user < users.length; user++){
-
-          var superElem = $("<div>").attr("class","row");
-          var elem = $("<div>");
-
-          elem.attr("class","col-xs-12 col-md-12")
-         elem.append($('<div>').attr("class","col-xs-2 col-md-2").append($('<img>').attr({src:img[user]})));
+         elem.attr("class","col-xs-12 col-md-12")
+         elem.append($('<div>').attr("class","col-xs-2 col-md-2").append($('<img>').attr({src:img})));
 
           var nameWithLink =$('<div>').attr("class","col-xs-10 col-md-5").append();
-          var nameLink = $('<a>').attr({href:channelLink[user],target:"_blank"});
-          nameLink.append($('<p>').text(channelName[user]));
+          var nameLink = $('<a>').attr({href:channelLink,target:"_blank"});
+          nameLink.append($('<p>').text(channelName));
           elem.append(nameWithLink.append(nameLink));
-          elem.append($('<div>').attr("class","col-xs-10 col-md-5").append($('<p>').text(status[user])));
+          elem.append($('<div>').attr("class","col-xs-10 col-md-5").append($('<p>').text(status)));
           superElem.append(elem);
           results.append($('<li>').append(superElem));
-
-          }
-      }
-
+  }//displayResults ends
 
   function getResults(){
-    for(var index in users){
-      storeResults(users[index]);
+    for(var index = 0; index < users.length; index++){
+      storeResults(users[index], index);
     }
     return true;
   }//getResult ends;
 getResults();
-displayResults();
+
 setTimeout(
   function(){
    var fimg = $('<img>').attr({src:"http://s19.postimg.org/5g4p3n90z/claping_hands.png",class:"flogo"});
