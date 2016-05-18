@@ -64,8 +64,10 @@ $(document).ready(function(){
   }//ends Display Result
   getResults();
   setTimeout(
-  function(){
-      $("footer").append($('<h2>').append($('<img>').attr({src:"http://s19.postimg.org/5g4p3n90z/claping_hands.png",class:"flogo"})).text("th-th-th-that's all folks!"));
-  },2000);
-
+    function(){
+     var fimg = $('<img>').attr({src:"http://s19.postimg.org/5g4p3n90z/claping_hands.png",class:"flogo"});
+     var footerText = $('<h2>').append(fimg);
+     footerText.append($('<span>').text("th-th-th-that's all folks!"));
+     $("footer").append(footerText);
+    },2000);
 });
