@@ -1,0 +1,112 @@
+.warning-sign{
+  font-size:100px;
+  color: yellow;
+}
+
+body{
+  background: #eee;
+  background-size: 100% 100%;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.container{
+  background: #F37262;
+  max-width: 320px;
+  margin: 3% auto;
+  box-shadow: 0px 0px 15px 15px rgba(46, 61, 73, 0.12);
+  -webkit-transition: background .5s ease-out 1s;
+  -moz-transition: background .5s ease-out 1s;
+  -o-transition: background .5s ease-out 1s;
+  transition: background .5s ease-out 1s;
+}
+
+i{
+  font-size: 150px;
+  margin: 30px auto;
+  color: #fff;
+}
+
+.name{
+  font-weight: 700;
+  font-size: 20px;
+}
+
+h3{
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+  line-height: 4;
+}
+
+.details{
+  min-height: 280px;
+}
+
+#icon{
+  margin: 60px auto;
+}
+
+.convert{
+  cursor: pointer;
+}
+
+.off{
+  color: rgba(255,255,255,.6);
+}
+
+#textData{
+  padding: 10px 0;
+  background: #fff;
+}
+
+#textData .col-xs-12{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#textData .col-xs-6{
+  padding: 0;
+  
+}
+
+#textData h3{
+  color: #333;
+}
+
+#textData .col-xs-12 .col-xs-6:last-child h3{
+  color: #666;
+} 
+
+#textData .col-xs-12:last-child .col-xs-6{
+  border-top: #eee 1px solid;
+}
+
+.bl, .sl{
+  margin: 0 15px;
+  min-width: 30px;
+  display: inline-block;
+  text-align: center;
+}
+
+span{
+  font-weight: 700;
+}
+
+.inc, .dec{
+  cursor: pointer;
+}
+
+.session p{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.session > p:last-child{
+  margin-top: 70px;
+  font-size: 30px;
+  font-weight: 700;
+}
