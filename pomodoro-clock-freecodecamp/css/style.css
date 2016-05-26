@@ -69,7 +69,7 @@ h3{
 
 #textData .col-xs-6{
   padding: 0;
-  
+
 }
 
 #textData h3{
@@ -78,7 +78,7 @@ h3{
 
 #textData .col-xs-12 .col-xs-6:last-child h3{
   color: #666;
-} 
+}
 
 #textData .col-xs-12:last-child .col-xs-6{
   border-top: #eee 1px solid;
@@ -109,4 +109,13 @@ span{
   margin-top: 70px;
   font-size: 30px;
   font-weight: 700;
+}
+
+*{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
