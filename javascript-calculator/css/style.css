@@ -1,0 +1,111 @@
+body{
+   padding: 10px;
+}
+
+.mainBody{
+  position: absolute;
+  background-color: #222;
+  width: 300px;
+  height: 480px;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  padding: 0;
+  box-shadow: 0px 3px 15px rgba(0,0,0,.3);
+}
+
+.displayPart{
+  padding: 30px 20px 40px;
+}
+
+.display{
+  background: #111;
+  height: 60px;
+  width: 100%;
+  border: 0;
+  text-align: right;
+  line-height: 60px;
+  color: #847369;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: 'Orbitron', sans-serif;
+  padding: 0 12px;
+}
+
+.borderDivs{
+  padding: 0;
+}
+
+.borderDivs > div{
+  height: 8px;
+}
+
+.div1{
+  background: #111;
+}
+.div2{
+  background: #847369;
+}
+.div3{
+  background: #111;
+}
+
+.btnAns{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.buttonsPart{
+  padding: 40px 0 0px 0;
+}
+
+.buttons{
+  line-height: 1.5;
+  color: #fff;
+  background: #333;
+  font-weight: 900;
+  width: 50px;
+  margin: 7px 7px;
+  display: inline;
+  border: solid 2px #111;
+  font-size: 12px;
+  border-radius: 2px;
+  outline: none;
+}
+
+.buttons:hover{
+  color: #fff;
+}
+.buttons:focus,
+.buttons:active,
+.buttons:hover {
+  color: #fff;
+  outline: none !important;
+}
+
+:focus {outline:none;}
+
+::-moz-focus-inner {border:0;}
+
+.buttons:active{
+ border: solid 1px #111 !important;
+ color: #fff;
+ outline: none;
+}
+
+::-webkit-input-placeholder {
+   opacity: .2;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   opacity: .2; 
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   opacity: .2;  
+}
+
+:-ms-input-placeholder {  
+   opacity: .2;  
+}
