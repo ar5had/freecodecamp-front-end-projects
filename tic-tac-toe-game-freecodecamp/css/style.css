@@ -1,0 +1,120 @@
+*{
+  font-family: 'Varela Round', sans-serif;
+}
+
+body{
+  background: #eee;
+}
+
+.selection{
+  min-width: 320px;
+  border-radius: 10px;
+}
+
+ h3{
+  color: #474340;
+  font-size: 40px;
+  line-height: 1;
+  margin: 6px;
+}
+
+.or{
+  display: inline-block;
+  font-size: 30px;
+  margin: 0 30px;
+  vertical-align: sub;
+}
+
+.btn{
+  background: none;
+  font-size: 40px;
+  border: 3px solid rgba(0,0,0,0);
+  width: 80px;
+  border: 3px solid #474340;
+}
+
+.btn:hover{
+  color:#474340;
+  border: 3px solid #474340;
+}
+
+.btnx{
+  color: #474340;
+  line-height: 1;
+}
+
+.btno{
+  color: #474340;
+  line-height: 1;
+}
+
+.pa{
+  margin: 40px auto 120px auto;
+}
+
+.row{
+  margin-bottom: 40px;
+}
+
+.board{
+  min-width: 320px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.lines{
+  min-height: 100px;
+}
+
+.box00{
+  border-right: 4px solid;
+  border-bottom: 4px solid;
+}
+
+.box01{
+  border-right: 4px solid;
+  border-bottom: 4px solid;
+}
+
+.box02{
+  border-bottom: 4px solid;
+}
+
+.box10{
+  border-right: 4px solid;
+  border-bottom: 4px solid;
+}
+
+.box11{
+  border-right: 4px solid;
+  border-bottom: 4px solid;
+}
+
+.box12{
+  border-bottom: 4px solid;
+}
+
+.box20{
+  border-right: 4px solid;
+}
+
+.box21{
+  border-right: 4px solid;
+}
+
+
+.row1, .row2, .row3{
+  min-height: 100px;
+}
+
+.alignBE{
+  line-height: 100px;
+  text-align: center;
+}
+
+.centerIntoPage{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
