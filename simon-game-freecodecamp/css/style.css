@@ -4,8 +4,8 @@ html{
 
 body {
   background: #333;
+  font-family: 'Montserrat', sans-serif;
 }
-
 
 .mainBody{
   background: #222;
@@ -30,27 +30,27 @@ body {
 
 .button1 {
   border-top-left-radius:100%;
-  background: #199A35;
+  background: #1C842D;
   margin: 0 6rem 1rem 0;
 }
 
 .button2 {
   border-top-right-radius: 100%;
-  background: #EA4242;
+  background: #E02626;
   margin: 0 0 1rem 6rem;
 }
 
 .button3 {
   border-bottom-left-radius: 100%;
-  background: #E8E83A;
+  background: #D2D234;
   margin-top: 6rem;
   margin-right: 6rem;
-  
+
 }
 
 .button4 {
   border-bottom-right-radius: 100%;
-  background: #4747C1;
+  background: #3636B9;
   margin-top: 6rem;
   margin-left: 6rem;
 }
@@ -58,16 +58,88 @@ body {
 .control {
   width: 220rem;
   height: 220rem;
-  background: #eee;
+  background: #ccc;
   border-radius: 100%;
   z-index: 9999;
   border: solid #222 12rem;
 }
 
-.center{
+.center {
   z-index: 99999;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+h5 {
+  line-height: 2;
+  font-size: 15rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 120rem;
+  border: 2rem solid #fff;
+  border-radius: 5rem;
+  margin: auto;
+  background: #222;
+  margin: 40rem auto 15rem;
+  color: #fff;
+}
+
+h4, h5 {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+.score {
+  display: inline-block;
+  border-radius: 100%;
+  text-align: center;
+}
+
+.cbtn {
+  display: inline-block;
+  border-radius: 100%;
+  width: 45rem;
+  height: 45rem;
+  color: #fff;
+  font-weight: 700;
+  font-size: 10rem;
+  text-transform: uppercase;
+  box-shadow: 0rem 0rem 3rem 3rem rgba(0,0,0,.3);
+  border: 2rem solid;
+  cursor: pointer;
+}
+
+.cbtn:active {
+  box-shadow: none;
+
+}
+
+.onOff {
+  background: #222;
+}
+
+.start {
+  background: #E02626;
+  margin: auto 8rem;
+}
+
+.strict {
+  background: #D2D234;
+}
+
+h4 {
+  line-height: 45rem;
+}
+
+@media screen and (max-width: 500px){
+  html{
+    font-size: .7px;
+  }
 }
