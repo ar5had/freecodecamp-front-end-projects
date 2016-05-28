@@ -115,6 +115,11 @@ h4, h5 {
   box-shadow: 0rem 0rem 3rem 3rem rgba(0,0,0,.3);
   border: 2rem solid;
   cursor: pointer;
+  -webkit-transition: box-shadow 100ms ease-in;
+  -moz-transition: box-shadow 100ms ease-in;
+  -o-transition: box-shadow 100ms ease-in;
+  -ms-transition: box-shadow 100ms ease-in;
+  transition: box-shadow 100ms ease-in;
 }
 
 .cbtn:active {
