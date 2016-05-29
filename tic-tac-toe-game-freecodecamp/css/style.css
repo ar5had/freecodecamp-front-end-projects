@@ -137,6 +137,12 @@ body{
   transform: translate(-50%,-50%);
 }
 
+#status{
+  margin-top: 30rem;
+  font-family: 'Varela Round', sans-serif;
+  color: #474340;
+}
+
 @media screen and (max-width : 350px) {
   html {
     font-size: .8px;
