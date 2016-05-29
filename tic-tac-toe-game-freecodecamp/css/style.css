@@ -13,7 +13,7 @@ body{
 .selection{
   min-width: 320rem;
   border-radius: 10rem;
-  border: solid #474340;
+  border: 4rem solid #474340;
 }
 
  h3{
@@ -35,12 +35,12 @@ body{
   background: none;
   font-size: 40rem;
   width: 80rem;
-  border: solid #474340;
+  border: 4rem solid #474340;
 }
 
 .btn:hover{
   color:#474340;
-  border: solid #474340;
+  border: 4rem solid #474340;
 }
 
 .btn:active, .btn, .btn select{
@@ -117,11 +117,16 @@ body{
 }
 
 .alignBE{
-  line-height: 100rem;
+  line-height: 96rem;
+  margin: 0;
   text-align: center;
+  cursor: pointer;
 }
 
-
+.lines{
+  padding: 0;
+  margin 0;
+}
 
 .centerIntoPage{
   position: absolute;
