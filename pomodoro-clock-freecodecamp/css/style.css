@@ -112,7 +112,6 @@ span{
 
 .session > p:last-child{
   font-size: 30rem;
-  font-weight: 700;
 }
 
 *{
@@ -124,17 +123,11 @@ span{
     user-select: none;
 }
 
-p.timerStatus{
-  font-size: 24rem !important;
-  z-index: 9999;
-  color:#fff;
-}
-
 .circ{
   background: #F37262;
-  border: solid #fff 6rem;
-  height: 140rem;
-  width: 140rem;
+  border: solid #fff 5rem;
+  height: 160rem;
+  width: 160rem;
   display: inline-block;
   border-radius: 100%;
 }
@@ -152,7 +145,7 @@ p.timerStatus{
 
 .glyphicon{
   color: #fff;
-  font-size: 20rem;
+  font-size: 18rem;
   cursor: pointer;
   position: absolute;
   top: 24rem;
@@ -168,10 +161,10 @@ p.timerStatus{
 
 h4{
   color: #fff;
-  font-size: 25rem;
-  font-weight: 700;
+  font-size: 20rem;
   margin-top: 20rem;
-}
+  font-weight: 500 !important;
+};
 
 .secondStick{
   width: 6rem;
