@@ -43,8 +43,8 @@ body{
   border: solid #474340;
 }
 
-.btn:active,.btn{
-  outline: none;
+.btn:active, .btn, .btn select{
+  outline: none !important;
 }
 
 .btnx{
@@ -130,7 +130,7 @@ body{
   transform: translate(-50%,-50%);
 }
 
-@media screen and (max-width : 380px) {
+@media screen and (max-width : 350px) {
   html {
     font-size: .8px;
   }
