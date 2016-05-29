@@ -73,8 +73,9 @@ body{
 
 .lines{
   color: #474340;
-  min-height: 100rem;
   cursor: pointer;
+  min-height: 96rem;
+  max-width: 96rem;
 }
 
 .box00{
@@ -115,11 +116,11 @@ body{
 
 
 .row1, .row2, .row3{
-  min-height: 100rem;
+  min-height: 96rem;
 }
 
 .alignBE{
-  line-height: 96rem;
+  line-height: 92rem;
   margin: 0;
   text-align: center;
 }
