@@ -72,7 +72,9 @@ body{
 }
 
 .lines{
+  color: #474340;
   min-height: 100rem;
+  cursor: pointer;
 }
 
 .box00{
@@ -120,7 +122,6 @@ body{
   line-height: 96rem;
   margin: 0;
   text-align: center;
-  cursor: pointer;
 }
 
 .lines{
