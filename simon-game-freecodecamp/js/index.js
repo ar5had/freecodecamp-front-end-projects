@@ -7,7 +7,7 @@ $(document).ready(function(){
   var glowButtonClickable = false;
   var clickCount = 0;
   var glowButtons = [], clickedButtons = [];
-  var timeout;
+  var timeout, timeout1, timeout2, timeout3;
 
   var audio = document.getElementById("audio");
 
@@ -48,6 +48,10 @@ $(document).ready(function(){
       }
       else{
         clearGame();
+        clearTimeout(timeout);
+        clearTimeout(timeout1);
+        clearTimeout(timeout2);
+        clearTimeout(timeout3);
         updateScore();
         $(".strict").removeClass("unclickable");
         $(this).text("Start");
@@ -71,8 +75,7 @@ $(document).ready(function(){
   });
 
   function startGame(){
-    var no =  (Math.floor(Math.random()* 10 + 1) % 4) + 1 ;
-    glowButtons.push( String(no) );
+    glowButtons.push( String((Math.floor(Math.random()* 10 + 1) % 4) + 1 ) );
     glow();
   }
 
@@ -83,7 +86,7 @@ $(document).ready(function(){
         count++;
         $(this).removeClass("glow").dequeue();
         if(count < glowButtons.length){
-          setTimeout(function(){
+          timeout1 = setTimeout(function(){
               glow();
           },900);
         }
@@ -101,7 +104,7 @@ $(document).ready(function(){
       var no = String($(this).attr('data-pos'));
       audio.play();
       if(clickedButtons[clickCount-1] !== glowButtons[clickCount-1]){
-        showStatus();
+        mistakeHappened();
         if(strict)
           clearGame();
         else
@@ -141,15 +144,15 @@ $(document).ready(function(){
     glowButtonClickable = false;
     clickCount = 0;
     clickedButtons = [];
-    setTimeout(function(){
+    timeout2 = setTimeout(function(){
       glow();
     },1500);
   }
 
-  function showStatus(){
-    $(".count").text("!!!!!!!!!").css({color:"red"});
+  function mistakeHappened(){
+    $(".count").text("Bad BTN !!!").css({color:"red"});
     $(".score").text("");
-    setTimeout(function(){
+    timeout3 = setTimeout(function(){
       $(".count").text("Count : ").css({color:"#EEE"});
       $(".score").text(score);
     },1200);
