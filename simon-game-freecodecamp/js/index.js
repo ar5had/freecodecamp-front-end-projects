@@ -114,7 +114,7 @@ $(document).ready(function(){
         clickedButtons = [];
         score++;
         updateScore();
-        if(score !== 2){
+        if(score !== 21){
           timeout = setTimeout(function(){
             startGame();
           }, 1500);
