@@ -1,13 +1,14 @@
-html{
+html {
   font-size: 1px;
 }
 
 body {
-  background: #fff;
+  background: #eee;
   font-family: 'Montserrat', sans-serif;
+  min-height: 440rem;
 }
 
-.mainBody{
+.mainBody {
   background: #444;
   text-align: center;
   box-sizing: content-box;
@@ -16,7 +17,7 @@ body {
   width: 413rem;
   height: 413rem;
   border-radius: 50%;
-  box-shadow: 0 0 5rem rgba(0,0,0,.5);
+  box-shadow: 0 0 5rem rgba(0, 0, 0, .5);
 }
 
 .button {
@@ -24,12 +25,17 @@ body {
   width: 200rem;
   height: 200rem;
   display: inline-block;
-  box-shadow: 0 0 5rem rgba(0,0,0,.5);
+  box-shadow: 0 0 8rem rgba(0, 0, 0, .7);
   cursor: pointer;
+  -webkit-transition: opacity 500ms linear;
+  -moz-transition: opacity 500ms linear;
+  -o-transition: opacity 500ms linear;
+  -ms-transition: opacity 500ms linear;
+  transition: opacity 500ms linear;
 }
 
 .button1 {
-  border-top-left-radius:100%;
+  border-top-left-radius: 100%;
   background: #34A853;
   margin: 0 6rem 1rem 0;
 }
@@ -45,7 +51,6 @@ body {
   background: #E0E03E;
   margin-top: 6rem;
   margin-right: 6rem;
-
 }
 
 .button4 {
@@ -58,7 +63,7 @@ body {
 .control {
   width: 220rem;
   height: 220rem;
-  background: #ddd;
+  background: #ededed;
   border-radius: 100%;
   z-index: 9999;
   border: solid #444 12rem;
@@ -77,17 +82,33 @@ h5 {
   font-size: 15rem;
   text-transform: uppercase;
   font-weight: 700;
-  width: 120rem;
-  border: 2rem solid #eee;
-  border-radius: 5rem;
+  max-height: 30rem;
+  padding-top: 30rem;
+  border: 0rem solid #eee;
   margin: auto;
-  background: #444;
-  margin: 40rem auto 15rem;
-  color: #fff;
-  box-shadow: inset 0 0 8px rgba(0,0,0,.6);
+  margin: 40rem auto 25rem;
+  color: #eee;
+  -webkit-transition: padding 500ms linear;
+  -moz-transition: padding 500ms linear;
+  -o-transition: padding 500ms linear;
+  -ms-transition: padding 500ms linear;
+  transition: padding 500ms linear;
 }
 
-h4, h5 {
+.roll{
+  padding-top: 29rem;
+}
+
+.display {
+  margin: auto;
+  width: 120rem;
+  background: #444;
+  border-radius: 5rem;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, .6);
+}
+
+h4,
+h5 {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -106,14 +127,14 @@ h4, h5 {
 .cbtn {
   display: inline-block;
   border-radius: 100%;
-  width: 45rem;
-  height: 45rem;
-  color: #fff;
+  width: 40rem;
+  height: 40rem;
+  color: #eee;
   font-weight: 700;
-  font-size: 10rem;
+  font-size: 9rem;
   text-transform: uppercase;
-  box-shadow: 0rem 0rem 3rem 3rem rgba(0,0,0,.3);
-  border: 2rem solid;
+  box-shadow: 0rem 0rem 6rem rgba(0, 0, 0, .7);
+  border: 0rem solid #222;
   cursor: pointer;
   -webkit-transition: box-shadow 100ms ease-in;
   -moz-transition: box-shadow 100ms ease-in;
@@ -124,7 +145,6 @@ h4, h5 {
 
 .cbtn:active {
   box-shadow: none;
-
 }
 
 .onOff {
@@ -141,11 +161,19 @@ h4, h5 {
 }
 
 h4 {
-  line-height: 45rem;
+  line-height: 40rem;
 }
 
-@media screen and (max-width: 500px){
-  html{
+.unclickable:active{
+  box-shadow: 0rem 0rem 6rem rgba(0, 0, 0, .7);
+}
+
+.glow{
+  opacity: 1;
+}
+
+@media screen and (max-width: 500px) {
+  html {
     font-size: .7px;
   }
 }
