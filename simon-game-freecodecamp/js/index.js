@@ -22,6 +22,10 @@ $(document).ready(function(){
     }
     else{
       clearGame();
+      clearTimeout(timeout);
+      clearTimeout(timeout1);
+      clearTimeout(timeout2);
+      clearTimeout(timeout3);
       on = false;
       $(this).text("On");
       $(".display > h5").css({'padding-top': "30rem"});
@@ -47,6 +51,7 @@ $(document).ready(function(){
         setTimeout(function(){startGame();},1200);
       }
       else{
+        glowButtonClickable = false;
         clearGame();
         clearTimeout(timeout);
         clearTimeout(timeout1);
@@ -76,7 +81,8 @@ $(document).ready(function(){
 
   function startGame(){
     glowButtons.push( String((Math.floor(Math.random()* 10 + 1) % 4) + 1 ) );
-    glow();
+    if(on && start)
+      glow();
   }
 
   function glow(){
@@ -87,7 +93,8 @@ $(document).ready(function(){
         $(this).removeClass("glow").dequeue();
         if(count < glowButtons.length){
           timeout1 = setTimeout(function(){
-              glow();
+              if(on && start)
+                glow();
           },900);
         }
         else{
@@ -98,7 +105,7 @@ $(document).ready(function(){
   }
 
   $(".button").click(function(){
-    if(glowButtonClickable){
+    if(glowButtonClickable && on && start){
       clickCount++;
       clickedButtons.push($(this).attr('data-pos'));
       var no = String($(this).attr('data-pos'));
