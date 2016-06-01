@@ -9,14 +9,15 @@ $(document).ready(function(){
   var glowButtons = [], clickedButtons = [];
   var timeout;
 
+  var audio = document.getElementById("audio");
+
   $(".onOff").click(function(){
     if(!on){
       $(".strict").removeClass("unclickable");
       $(".start").removeClass("unclickable");
       on = true;
       $(this).text("off");
-      $(".count").text("Count :");
-      $(".score").text(score);
+      $(".count").text("Welcome !!!");
       $(".display > h5").css({'padding-top': "0"});
     }
     else{
@@ -39,6 +40,7 @@ $(document).ready(function(){
   $(".start").click(function(){
     if(on){
       if(!start){
+        updateScore();
         $(this).text("Stop");
         $(".strict").addClass("unclickable");
         start = true;
@@ -69,12 +71,14 @@ $(document).ready(function(){
   });
 
   function startGame(){
-    glowButtons.push( String( (Math.floor(Math.random()* 10 + 1) % 4) + 1 ) );
+    var no =  (Math.floor(Math.random()* 10 + 1) % 4) + 1 ;
+    glowButtons.push( String(no) );
     glow();
   }
 
   function glow(){
       var str = ".button" + glowButtons[count];
+      audio.play();
       $(str).addClass("glow").delay(1000).queue(function(){
         count++;
         $(this).removeClass("glow").dequeue();
@@ -94,6 +98,8 @@ $(document).ready(function(){
     if(glowButtonClickable){
       clickCount++;
       clickedButtons.push($(this).attr('data-pos'));
+      var no = String($(this).attr('data-pos'));
+      audio.play();
       if(clickedButtons[clickCount-1] !== glowButtons[clickCount-1]){
         showStatus();
         if(strict)
@@ -108,10 +114,10 @@ $(document).ready(function(){
         clickedButtons = [];
         score++;
         updateScore();
-        if(score !== 21){
+        if(score !== 2){
           timeout = setTimeout(function(){
             startGame();
-          }, 1000);
+          }, 1500);
         }
         else
           showVictory();
@@ -137,7 +143,7 @@ $(document).ready(function(){
     clickedButtons = [];
     setTimeout(function(){
       glow();
-    }, 1500);
+    },1500);
   }
 
   function showStatus(){
@@ -158,7 +164,7 @@ $(document).ready(function(){
 
   function showVictory(){
       $(".score").text("");
-      $(".count").text("You Win!!!").css({color:"green"});
+      $(".count").text("You Win !!!").css({color:"#69b669"});
       setTimeout(function(){clearGame();}, 2000);
   }
 });
