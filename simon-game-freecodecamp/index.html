@@ -8,23 +8,23 @@
   </head>
   <body>
     <div class="mainBody center">
-      <div class="button1 button">
+      <div class="button1 button" data-pos="1">
       </div><!--
-      --><div class="button2 button">
+      --><div class="button2 button" data-pos="2">
       </div><!--
-      --><div class="button3 button">
+      --><div class="button3 button" data-pos="3">
       </div><!--
-      --><div class="button4 button">
+      --><div class="button4 button" data-pos="4">
       </div>
     </div>
     <div class="control center">
-      <h5 class="text-center">Count :
-       <span class="score">12</span>
-      </h5>
+      <div class="display"><h5 class="text-center"><span class="count"></span>
+       <span class="score"></span>
+      </h5></div>
       <h4 class="text-center">
         <span class="onOff cbtn">On</span>
-        <span class="start cbtn">Start</span>
-        <span class="strict cbtn">Strict</span>
+        <span class="start cbtn unclickable">Start</span>
+        <span class="strict cbtn unclickable">Strict</span>
       </h4>
     </div>
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>

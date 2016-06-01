@@ -27,6 +27,7 @@ body {
   display: inline-block;
   box-shadow: 0 0 8rem rgba(0, 0, 0, .7);
   cursor: pointer;
+  opacity: .5;
   -webkit-transition: opacity 500ms linear;
   -moz-transition: opacity 500ms linear;
   -o-transition: opacity 500ms linear;
