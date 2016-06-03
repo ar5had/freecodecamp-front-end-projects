@@ -81,8 +81,8 @@ $(document).ready(function(){
             return;
           }
       }
-        var lhs = exp[pos-1]?parseInt(exp[pos-1]):NaN;
-        var rhs = exp[pos+1]?parseInt(exp[pos+1]):NaN
+        var lhs = exp[pos-1]?parseFloat(exp[pos-1]):NaN;
+        var rhs = exp[pos+1]?parseFloat(exp[pos+1]):NaN
         if(!lhs || !rhs){
           return -1;
         }
