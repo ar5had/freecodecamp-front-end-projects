@@ -16,7 +16,7 @@ body{
 }
 
 .selection{
-  min-width: 320rem;
+  min-width: 320rem ;
   border-radius: 10rem;
   border: 4rem solid #474340;
 }
@@ -71,8 +71,7 @@ body{
 }
 
 .board{
-  min-width: 320rem;
-  max-width: 380rem;
+  width: 294rem;
   margin: auto;
 }
 
@@ -80,7 +79,7 @@ body{
   color: #474340;
   cursor: pointer;
   min-height: 96rem;
-  max-width: 96rem;
+  width: 96rem;
 }
 
 .box00{
@@ -125,8 +124,9 @@ body{
 }
 
 .alignBE{
-  line-height: 92rem;
+  line-height: 96rem;
   margin: 0;
+  min-height: 96rem;
   text-align: center;
 }
 
@@ -147,6 +147,7 @@ body{
   font-family: 'Varela Round', sans-serif;
   color: #474340;
 }
+
 
 @media screen and (max-width : 350px) {
   html {
