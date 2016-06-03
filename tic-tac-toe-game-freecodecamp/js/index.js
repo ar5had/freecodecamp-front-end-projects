@@ -51,7 +51,7 @@ $(document).ready(function(){
       updateBoxValues("box"+$(this).attr('datarow')+$(this).attr('datacol'),$(this).attr('datarow'),$(this).attr('datacol'),user);
       gameStatus();
       if(moves > 2)
-        incPreferenceUser();
+       incPreferenceUser();
       computerChance();
       if(gameStatus())
         return;
@@ -149,7 +149,7 @@ $(document).ready(function(){
   function updateBoxValues(str, row, col, player){
     boxValues[str].pref = -1;
     if(player === user)
-      mmarkedBoxes.push(new BoxMarked(parseInt(row), parseInt(col) ));
+      markedBoxes.push(new BoxMarked(parseInt(row), parseInt(col) ));
 
   else {
       markedBoxesC.push(new BoxMarked(parseInt(row), parseInt(col) ));
@@ -182,17 +182,20 @@ $(document).ready(function(){
       for(var elem in boxes){
         boxes[elem].children().text("");
       }
+      computerChance();
+        moves++;
       isClickable = true;
+
     }, 1500);
   }
 
 
 
   function incPreferenceUser(){
-    if(mmarkdedBoxes.length < 2)
+    if(markedBoxes.length < 2)
       return;
-    else{
 
+      console.log(moves,"moves and i am in incPreferenceUser");
             if(markedBoxes[0].row === markedBoxes[1].row){
                var col = [1,2,0];
                col = col.filter(function(a){
@@ -210,6 +213,7 @@ $(document).ready(function(){
                    return true;
                });
                var col = markedBoxes[0].col;
+               console.log("inc pref is for ",row[0],col);
                boxValues["box"+row[0]+col].pref = boxValues["box"+row[0]+col].pref === -1 ? -1 : 5;
              }
 
@@ -240,11 +244,11 @@ $(document).ready(function(){
                boxValues["box"+row[0]+row[0]].pref = boxValues["box"+row[0]+row[0]].pref === -1 ? -1 : 5;
              }
 
-          }
 
 
-      }
-    }
+             markedBoxes = [];
+
+
    }
 /*
    function incPreferenceComp(){
