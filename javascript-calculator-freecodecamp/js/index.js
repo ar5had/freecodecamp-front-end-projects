@@ -82,7 +82,7 @@ $(document).ready(function(){
           }
       }
         var lhs = exp[pos-1]?parseFloat(exp[pos-1]):NaN;
-        var rhs = exp[pos+1]?parseFloat(exp[pos+1]):NaN
+        var rhs = exp[pos+1]?parseFloat(exp[pos+1]):NaN;
         if(!lhs || !rhs){
           return -1;
         }

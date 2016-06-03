@@ -50,6 +50,8 @@ $(document).ready(function(){
       $(this).children().text(user);
       updateBoxValues("box"+$(this).attr('datarow')+$(this).attr('datacol'),$(this).attr('datarow'),$(this).attr('datacol'),user);
       gameStatus();
+      if(moves > 2)
+        incPreferenceUser();
       computerChance();
       if(gameStatus())
         return;
@@ -184,17 +186,13 @@ $(document).ready(function(){
     }, 1500);
   }
 
-  /*
+
 
   function incPreferenceUser(){
     if(mmarkdedBoxes.length < 2)
       return;
     else{
-      for(var i = 0; i < mmarkedBoxes.length; i++){
-        markedBoxes[0] = mmarkedBoxes[i];
-        for(var j = 0; j < mmarkedBoxes.length; j++){
-          if(j !== i){
-            markedBoxes[1] = mmarkedBoxes[j];
+
             if(markedBoxes[0].row === markedBoxes[1].row){
                var col = [1,2,0];
                col = col.filter(function(a){
@@ -243,12 +241,12 @@ $(document).ready(function(){
              }
 
           }
-        }
+
 
       }
     }
    }
-
+/*
    function incPreferenceComp(){
 
      if(markedBoxesC.length < 2)
