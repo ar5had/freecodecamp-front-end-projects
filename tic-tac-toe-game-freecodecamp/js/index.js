@@ -49,7 +49,8 @@ $(document).ready(function(){
       moves++;
       $(this).children().text(user);
       updateBoxValues("box"+$(this).attr('datarow')+$(this).attr('datacol'),$(this).attr('datarow'),$(this).attr('datacol'),user);
-      gameStatus();
+      if(gameStatus())
+        return;
       if(moves > 2)
        incPreferenceUser();
       computerChance();
