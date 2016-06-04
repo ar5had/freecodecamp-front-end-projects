@@ -58,7 +58,7 @@ $(document).ready(function(){
         return;
       moves++;
       if(moves === 9){
-        $("#status").text("Game draw!");
+        $("#status").text("Let's play another game!");
         resetGame();
         return;
       }
