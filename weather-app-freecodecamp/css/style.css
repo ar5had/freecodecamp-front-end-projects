@@ -1,5 +1,9 @@
+html {
+  font-size: 1px;
+}
+
 .warning-sign{
-  font-size:100px;
+  font-size:100rem;
   color: yellow;
 }
 
@@ -7,16 +11,16 @@ body{
   background: #eee;
   background-size: 100% 100%;
   font-family: 'Montserrat', sans-serif;
-  letter-spacing: 1px;
-  margin-bottom: 30px;
-  padding: 20px;
+  letter-spacing: 1rem;
+  margin-bottom: 30rem;
+  padding: 20rem;
 }
 
 .container{
   background: pink;
-  max-width: 300px;
+  max-width: 300rem;
   margin: 3% auto;
-  box-shadow: 0px 0px 15px 15px rgba(46, 61, 73, 0.12);
+  box-shadow: 0rem 15rem 15rem rgba(46, 61, 73, 0.12);
   -webkit-transition: background .5s ease-out 1s;
   -moz-transition: background .5s ease-out 1s;
   -o-transition: background .5s ease-out 1s;
@@ -24,30 +28,30 @@ body{
 }
 
 i{
-  font-size: 150px;
-  margin: 30px auto;
+  font-size: 150rem;
+  margin: 30rem auto;
   color: #fff;
 }
 
 .name{
   font-weight: 700;
-  font-size: 20px;
+  font-size: 20rem;
 }
 
 h3{
   color: #fff;
-  font-size: 15px;
+  font-size: 15rem;
 
   margin: 0;
   line-height: 3;
 }
 
 .tempDetails{
-  min-height: 345px;
+  min-height: 345rem;
 }
 
 #icon{
-  margin: 60px auto;
+  margin: 60rem auto;
 }
 
 .convert{
@@ -59,18 +63,18 @@ h3{
 }
 
 .tempDetails h3{
-  font-size: 25px;
+  font-size: 25rem;
   font-weight: 700;
 }
 
 #textData{
-  padding: 10px 0;
+  padding: 10rem 0;
   background: #fff;
 }
 
 #textData .col-xs-12{
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 20rem;
+  padding-right: 20rem;
 }
 
 #textData .col-xs-6{
@@ -87,7 +91,13 @@ h3{
 }
 
 #textData .col-xs-12:last-child .col-xs-6{
-  border-top: #eee 1px solid;
+  border-top: #eee 1rem solid;
+}
+
+@media screen and (min-width: 400px) {
+  html {
+    font-size: .8px;
+  }
 }
 
 /*************weather icon min css ***********/
