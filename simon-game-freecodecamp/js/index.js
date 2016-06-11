@@ -13,6 +13,7 @@ $(document).ready(function(){
 
   $(".onOff").click(function(){
     if(!on){
+      $('.button').addClass('offButton');
       $(".strict").removeClass("unclickable");
       $(".start").removeClass("unclickable");
       on = true;
@@ -48,7 +49,7 @@ $(document).ready(function(){
         $(this).text("Stop");
         $(".strict").addClass("unclickable");
         start = true;
-        setTimeout(function(){startGame();},1200);
+        setTimeout(function(){startGame();},800);
       }
       else{
         glowButtonClickable = false;
@@ -88,14 +89,14 @@ $(document).ready(function(){
   function glow(){
       var str = ".button" + glowButtons[count];
       audio.play();
-      $(str).addClass("glow").delay(1000).queue(function(){
+      $(str).addClass("glow").delay(800).queue(function(){
         count++;
         $(this).removeClass("glow").dequeue();
         if(count < glowButtons.length){
           timeout1 = setTimeout(function(){
               if(on && start)
                 glow();
-          },900);
+          },800);
         }
         else{
           count = 0;
@@ -143,6 +144,7 @@ $(document).ready(function(){
     glowButtons = [];
     clickedButtons = [];
     $(".start").text("start");
+    $(".button").removeClass('offButton');
     start = false;
     updateScore()
   }
@@ -175,6 +177,6 @@ $(document).ready(function(){
   function showVictory(){
       $(".score").text("");
       $(".count").text("You Win !!!").css({color:"#69b669"});
-      setTimeout(function(){clearGame();}, 2000);
+      setTimeout(function(){clearGame();}, 3000);
   }
 });
