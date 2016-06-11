@@ -54,7 +54,6 @@ $(document).ready(function(){
     count = 0;
     exp = [];
     flag2 = false;
-    disp.attr("placeholder","0000000000000");
   });
 
   equalButton.click(function(){
