@@ -1,58 +1,51 @@
 body{
   padding: 10px;
-  background: #ddd;
+  font-family: 'Montserrat', sans-serif;
+  background: #eee;
 }
 
 .mainBody{
-  position: absolute;
-  background-color: #222;
+  background: #e6cc67;
   width: 300px;
   height: 480px;
-  transform: translate(-50%,-50%);
-  top: 50%;
-  left: 50%;
-  border-radius: 10px;
   padding: 0;
-  box-shadow: 0 0 15px 15px rgba(255,255,255,.5);
+  margin: 3% auto;
+  border-radius: 20px;
+  box-sizing: content-box;
+  box-shadow: 0 15px 15px rgba(0,0,0,.3);
 }
 
 .displayPart{
-  padding: 30px 20px 40px;
+  padding: 30px 20px;
+  border-radius: 10px 10px 0 0;
+  background: #363535;
+  border-radius: 20px 20px 0 0;
 }
 
 .display{
-  background: #111;
+  background: #444;
   height: 60px;
   width: 100%;
   border: 0;
   text-align: right;
   line-height: 60px;
-  color: #847369;
-  font-size: 20px;
-  letter-spacing: 1px;
-  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: 2.8px;
   padding: 0 12px;
+  box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,.3);
 }
 
 .borderDivs{
   padding: 0;
 }
 
-.borderDivs > div{
+.borderDivs{
   height: 8px;
+  background-color: #444;
 }
 
-.div1{
-  background: #111;
-}
-.div2{
-  background: #847369;
-}
-.div3{
-  background: #111;
-}
-
-.btnAns{
+.btnAns, .btn{
   padding-left: 0;
   padding-right: 0;
 }
@@ -63,15 +56,16 @@ body{
 
 .buttons{
   line-height: 1.5;
-  color: #ddd;
-  background: #333;
+  color: #fff;
+  background: #444;
   font-weight: 900;
   width: 50px;
   margin: 7px 7px;
   display: inline;
-  border: solid 2px #111;
-  font-size: 12px;
-  border-radius: 2px;
+  font-size: 13px;
+  border-radius: 4px;
+  border: solid 2px #444;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,.3);
   outline: none;
 }
 
@@ -79,9 +73,6 @@ body{
   width: 118px;
 }
 
-.buttons:hover{
-  color: #eee;
-}
 .buttons:focus,
 .buttons:active,
 .buttons:hover {
@@ -94,9 +85,9 @@ body{
 ::-moz-focus-inner {border:0;}
 
 .buttons:active{
- border: solid 1px #111 !important;
  color: #fff;
  outline: none;
+ box-shadow: none;
 }
 
 ::-webkit-input-placeholder {
@@ -113,4 +104,8 @@ body{
 
 :-ms-input-placeholder {
    opacity: .2;
+}
+
+.btnMult{
+  font-size: 15px;
 }
