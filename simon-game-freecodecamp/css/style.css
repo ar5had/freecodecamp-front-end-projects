@@ -17,7 +17,7 @@ body {
   width: 413rem;
   height: 413rem;
   border-radius: 50%;
-  box-shadow: 0 0 5rem rgba(0, 0, 0, .5);
+  box-shadow: 0 0 15rem rgba(0, 0, 0, .5);
 }
 
 .button {
@@ -25,16 +25,16 @@ body {
   width: 200rem;
   height: 200rem;
   display: inline-block;
-  box-shadow: 0 0 8rem rgba(0, 0, 0, .7);
+
   cursor: pointer;
-  -webkit-transition: opacity 500ms linear;
-  -moz-transition: opacity 500ms linear;
-  -o-transition: opacity 500ms linear;
-  -ms-transition: opacity 500ms linear;
-  transition: opacity 500ms linear;
+  -webkit-transition: opacity 300ms linear;
+  -moz-transition: opacity 300ms linear;
+  -o-transition: opacity 300ms linear;
+  -ms-transition: opacity 300ms linear;
+  transition: opacity 300ms linear;
 }
 
-.offButton {
+.offButton{
   opacity: .5;
 }
 
@@ -137,8 +137,8 @@ h5 {
   font-weight: 700;
   font-size: 9rem;
   text-transform: uppercase;
-  box-shadow: 0rem 0rem 6rem rgba(0, 0, 0, .7);
-  border: 0rem solid #222;
+  box-shadow: 0rem 1rem 2rem 2rem rgba(0, 0, 0, .3);
+  border: 0rem solid #fff;
   cursor: pointer;
   -webkit-transition: box-shadow 100ms ease-in;
   -moz-transition: box-shadow 100ms ease-in;
