@@ -8,19 +8,19 @@ html{
 }
 
 body{
-  background: #eee;
-  background-size: 100% 100%;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 1rem;
-  margin-bottom: 30rem;
   padding: 20rem;
+  min-height: 100vh;
+  background: #EDEFF2;
 }
 
 .container{
+  border-radius: 10rem;
   background: #F37262;
   max-width: 320rem;
-  margin: 3% auto;
-  box-shadow: 0rem 0rem 15rem 15rem rgba(46, 61, 73, 0.12);
+  margin: 5% auto;
+  box-shadow: 0rem 30rem 30rem rgba(46, 61, 73, 0.22);
   -webkit-transition: background .5s ease-out 1s;
   -moz-transition: background .5s ease-out 1s;
   -o-transition: background .5s ease-out 1s;
@@ -65,6 +65,8 @@ h3{
 #textData{
   padding: 10rem 0;
   background: #fff;
+  border-radius:  0 0 10rem 10rem;
+
 }
 
 #textData .col-xs-12{
@@ -152,7 +154,7 @@ span{
   right: 15rem;
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 400px) {
   html {
     font-size: .7px;
   }
