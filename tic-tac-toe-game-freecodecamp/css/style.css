@@ -2,12 +2,14 @@
   font-family: 'Varela Round', sans-serif;
 }
 
-html{
-  font-size: 1px;
+body {
+  background: #5B99C2;
+  min-height: 101vh;
 }
 
-body{
-  background: #eee;
+
+html{
+  font-size: 1px;
 }
 
 .row1, .row2, .row3 {
@@ -16,16 +18,19 @@ body{
 }
 
 .selection{
-  min-width: 320rem ;
+  min-width: 360rem ;
   border-radius: 10rem;
-  border: 4rem solid #474340;
+  background: #414141;
+  border: solid 15rem #373737;
 }
 
  h3{
-  color: #474340;
+  color: #eee;
   font-size: 40rem;
   line-height: 1;
   margin: 6rem;
+  font-weight: 700;
+
 }
 
 .or{
@@ -33,7 +38,8 @@ body{
   font-size: 40rem;
   margin: 0 30rem;
   vertical-align: middle;
-  color: #474340;
+  color: #eee;
+  font-weight: 700;
 }
 
 
@@ -41,26 +47,39 @@ body{
   background: none;
   font-size: 40rem;
   width: 80rem;
-  border: 4rem solid #474340;
+  font-weight: 700;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.btn:hover{
-  color:#474340;
-  border: 4rem solid #474340;
+.btnx:hover{
+  color: #F27164;
+  background: none;
+  border: 6rem solid #F27164;
+}
+
+.btno:hover{
+  color: #E9CB53;
+  border: 6rem solid #E9CB53;
+  background: none;
 }
 
 .btn:active, .btn, .btn select{
   outline: none !important;
 }
 
-.btnx{
-  color: #474340;
+.btnx, .btnx:active{
+  color: #F27164 !important;
   line-height: 1;
+  border: 6rem solid #F27164  !important;
+  background: none !important;
 }
 
-.btno{
-  color: #474340;
+.btno, .btno:active{
+  color: #E9CB53 !important;
   line-height: 1;
+  border: 6rem solid #E9CB53 !important;
+  background: none !important;
 }
 
 .pa{
@@ -74,49 +93,54 @@ body{
 .board{
   width: 289rem;
   margin: auto;
+  background: #414141;
+  border-radius: 10rem;
+  border: solid 15rem #373737;
+  box-sizing: content-box;
+  padding: 30rem;
 }
 
 .lines{
-  color: #474340;
+  color: #5B99C2;
   cursor: pointer;
   min-height: 96rem;
   width: 96rem;
 }
 
 .box00{
-  border-right: 4rem solid;
-  border-bottom: 4rem solid;
+  border-right: 6rem solid;
+  border-bottom: 6rem solid;
 }
 
 .box01{
-  border-right: 4rem solid;
-  border-bottom: 4rem solid;
+  border-right: 6rem solid;
+  border-bottom: 6rem solid;
 }
 
 .box02{
-  border-bottom: 4rem solid;
+  border-bottom: 6rem solid;
 }
 
 .box10{
-  border-right: 4rem solid;
-  border-bottom: 4rem solid;
+  border-right: 6rem solid;
+  border-bottom: 6rem solid;
 }
 
 .box11{
-  border-right: 4rem solid;
-  border-bottom: 4rem solid;
+  border-right: 6rem solid;
+  border-bottom: 6rem solid;
 }
 
 .box12{
-  border-bottom: 4rem solid;
+  border-bottom: 6rem solid;
 }
 
 .box20{
-  border-right: 4rem solid;
+  border-right: 6rem solid;
 }
 
 .box21{
-  border-right: 4rem solid;
+  border-right: 6rem solid;
 }
 
 
@@ -129,7 +153,6 @@ body{
   margin: 0;
   min-height: 96rem;
   text-align: center;
-  text-shadow: 1px 1px 1px #999;
 }
 
 .lines{
@@ -145,24 +168,44 @@ body{
 }
 
 #status{
-  margin: 30rem auto;
+  z-index: 9999;
   font-family: 'Varela Round', sans-serif;
-  color: #474340;
-  font-size: 35rem;
-  min-width: 300rem;
-  text-shadow: 1px 1px 1px #999;
+  color: #eee;
+  font-size: 100rem;
+  font-weight: 700;
   text-align: center;
+  transform: rotate(-30deg);
+  text-shadow: 5rem 0rem #666;
 }
 
+.statDiv{
+  z-index: 99999;
+}
 
-@media screen and (max-width : 350px) {
+.X {
+  color: #F27164;
+}
+
+.O {
+  color: #E9CB53;
+}
+
+@media screen and (max-width : 500px) {
   html {
-    font-size: .8px;
+    font-size: .7px;
   }
 }
 
+@media screen and (max-width : 350px) {
+  html {
+    font-size: .5px;
+  }
+
+}
+
+
 @media screen and (min-width : 750px) {
   html {
-    font-size: 1.3px;
+    font-size: 1px;
   }
 }
