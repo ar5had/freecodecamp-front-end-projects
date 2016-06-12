@@ -146,7 +146,7 @@ $(document).ready(function(){
     }
 
     updateBoxValues(maxpos, row, col, comp);
-    $("."+maxpos).children().addClass(comp);
+    $("."+maxpos).children().removeClass(user).addClass(comp);
     $("."+maxpos).children().text(comp);
   }
 
