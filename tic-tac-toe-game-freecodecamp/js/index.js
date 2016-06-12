@@ -38,6 +38,7 @@ $(document).ready(function(){
     else
       comp = "X";
     $(".selection").fadeOut(700,function(){
+      $('body').css('background','#5DBD86');
       $(".board").hide().removeClass("hidden").fadeIn(1000);
       computerChance();
         moves++;
@@ -47,6 +48,7 @@ $(document).ready(function(){
   $(".lines").click(function(){
     if($(this).children().text() === "" && isClickable){
       moves++;
+      $(this).children().removeClass(comp).addClass(user);
       $(this).children().text(user);
       updateBoxValues("box"+$(this).attr('datarow')+$(this).attr('datacol'),$(this).attr('datarow'),$(this).attr('datacol'),user);
       if(gameStatus())
@@ -58,7 +60,7 @@ $(document).ready(function(){
         return;
       moves++;
       if(moves === 9){
-        $("#status").text("Let's play another game!");
+        $("#status").text("Game draw!");
         resetGame();
         return;
       }
@@ -144,6 +146,7 @@ $(document).ready(function(){
     }
 
     updateBoxValues(maxpos, row, col, comp);
+    $("."+maxpos).children().addClass(comp);
     $("."+maxpos).children().text(comp);
   }
 
