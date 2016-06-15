@@ -7,10 +7,10 @@ $(document).ready(function(){
   var glowButtonClickable = false;
   var clickCount = 0;
   var glowButtons = [], clickedButtons = [];
-  var timeout, timeout1, timeout2, timeout3;
-
+  var timeout, timeout1, timeout2, timeout3, timeout4;
+  
   var audio = document.getElementById("audio");
-
+    
   $(".onOff").click(function(){
     if(!on){
       $('.button').addClass('offButton');
@@ -41,7 +41,7 @@ $(document).ready(function(){
       pattern = [];
     }
   });
-
+  
   $(".start").click(function(){
     if(on){
       if(!start){
@@ -58,6 +58,7 @@ $(document).ready(function(){
         clearTimeout(timeout1);
         clearTimeout(timeout2);
         clearTimeout(timeout3);
+        clearTimeout(timeout4);
         updateScore();
         $(".strict").removeClass("unclickable");
         $(this).text("Start");
@@ -67,7 +68,7 @@ $(document).ready(function(){
       }
     }
   });
-
+  
   $(".strict").click(function(){
     if(!strict && !start && on){
       $(this).text("Easy");
@@ -83,7 +84,7 @@ $(document).ready(function(){
   function startGame(){
     glowButtons.push( String((Math.floor(Math.random()* 10 + 1) % 4) + 1 ) );
     if(on && start)
-      glow();
+      glow();    
   }
 
   function glow(){
@@ -100,42 +101,42 @@ $(document).ready(function(){
         }
         else{
           count = 0;
-          glowButtonClickable = true;
+          glowButtonClickable = true;   
         }
-      });
+      });   
   }
-
+  
   $(".button").click(function(){
     if(glowButtonClickable && on && start){
       clickCount++;
+      glowOnly((".button"+String($(this).attr('data-pos'))));
       clickedButtons.push($(this).attr('data-pos'));
       var no = String($(this).attr('data-pos'));
       audio.play();
       if(clickedButtons[clickCount-1] !== glowButtons[clickCount-1]){
         mistakeHappened();
-        if(strict)
-          clearGame();
-        else
-          giveAnotherChance();
+        giveAnotherChance();
         return;
       }
       if(clickedButtons.length === glowButtons.length){
         glowButtonClickable = false;
         clickCount = 0;
         clickedButtons = [];
-        score++;
-        updateScore();
-        if(score !== 21){
+        if(score !== 20){
+          timeout4 = setTimeout(function(){
+            score++;
+            updateScore();
+          }, 1300);
           timeout = setTimeout(function(){
             startGame();
-          }, 1500);
+          }, 1800);
         }
         else
           showVictory();
       }
     }
   });
-
+  
   function clearGame(){
     glowButtonClickable = false;
     clickCount = 0;
@@ -146,18 +147,32 @@ $(document).ready(function(){
     $(".start").text("start");
     $(".button").removeClass('offButton');
     start = false;
-    updateScore()
+    updateScore();
   }
-
+  
   function giveAnotherChance(){
     glowButtonClickable = false;
     clickCount = 0;
     clickedButtons = [];
-    timeout2 = setTimeout(function(){
-      glow();
-    },1500);
+    if(strict){
+      glowButtonClickable = false;
+      clickCount = 0;
+      score = 1;
+      count = 0;
+      glowButtons = [];
+      clickedButtons = [];
+      timeout2 = setTimeout(function(){
+      updateScore();
+      startGame();
+      },1500);
+    }
+    else{
+      timeout2 = setTimeout(function(){
+        glow();
+      },1800);
+    }
   }
-
+  
   function mistakeHappened(){
     $(".count").text("Bad BTN !!!").css({color:"red"});
     $(".score").text("");
@@ -166,17 +181,23 @@ $(document).ready(function(){
       $(".score").text(score);
     },1200);
   }
-
+  
   function updateScore(){
-
+    
     $(".count").text("Count : ").css({color:"#EEE"});
     $(".score").text(score);
-
+    
   }
-
+  
   function showVictory(){
       $(".score").text("");
       $(".count").text("You Win !!!").css({color:"#69b669"});
       setTimeout(function(){clearGame();}, 3000);
+  }
+  
+  function glowOnly(btn){
+      $(btn).addClass("glow").delay(800).queue(function(){
+        $(this).removeClass("glow").dequeue();
+      });
   }
 });
